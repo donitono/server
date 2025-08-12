@@ -17,7 +17,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 
 -- UI Configuration (dari spin.lua)
 local CONFIG = {
-    GUI_TITLE = "ZAYROS FISH",
+    GUI_TITLE = "XSan FISH",
     VERSION = "V2.0",
     HOTKEY = Enum.KeyCode.F9,
     AUTO_SAVE_SETTINGS = true,

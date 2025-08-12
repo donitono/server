@@ -28,10 +28,10 @@
 -- GANTI URL INI DENGAN GITHUB RAW URL ANDA
 local GITHUB_CONFIG = {
     -- URL untuk UI Module Complete (WAJIB GANTI)
-    UI_MODULE = "https://raw.githubusercontent.com/yourusername/yourrepo/main/ui_module_complete.lua",
+    UI_MODULE = "https://raw.githubusercontent.com/donitono/server/refs/heads/main/ui.lua",
     
     -- URL untuk Main Script Complete (WAJIB GANTI)
-    MAIN_SCRIPT = "https://raw.githubusercontent.com/yourusername/yourrepo/main/main_script_complete.lua",
+    MAIN_SCRIPT = "https://raw.githubusercontent.com/donitono/server/refs/heads/main/main.lua",
     
     -- Informasi Repository
     REPO_NAME = "fish-script",

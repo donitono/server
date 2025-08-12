@@ -34,8 +34,8 @@ local GITHUB_CONFIG = {
     MAIN_SCRIPT = "https://raw.githubusercontent.com/donitono/server/refs/heads/main/main.lua",
     
     -- Informasi Repository
-    REPO_NAME = "fish-script",
-    USERNAME = "yourusername",
+    REPO_NAME = "SpinnerFISHIT",
+    USERNAME = "XSan",
     BRANCH = "main"
 }
 
@@ -45,8 +45,8 @@ local GITHUB_CONFIG = {
 
 local SCRIPT_CONFIG = {
     -- Nama GUI
-    GUI_NAME = "ZayrosFISHIT",
-    GUI_TITLE = "ZAYROS FISH SCRIPT",
+    GUI_NAME = "SpinnerFISHIT",
+    GUI_TITLE = "FISH SCRIPT",
     
     -- Hotkey untuk hide/show (F1-F12)
     HOTKEY = "F9",
@@ -126,7 +126,7 @@ local FEATURES = {
 -- ===================================================================
 
 local function loadCompleteScript()
-    print("🚀 Loading ZAYROS FISH SCRIPT Complete Version...")
+    print("🚀 Loading FISH SCRIPT Complete Version...")
     print("📡 Repository: " .. GITHUB_CONFIG.USERNAME .. "/" .. GITHUB_CONFIG.REPO_NAME)
     print("🔧 Features: All features from spin.lua included")
     
@@ -153,7 +153,7 @@ local function loadCompleteScript()
     end)
     
     if success then
-        print("✅ ZAYROS FISH SCRIPT Complete loaded successfully!")
+        print("✅ FISH SCRIPT Complete loaded successfully!")
         print("🎣 All features from spin.lua are available!")
         print("🔧 Available modes:")
         print("   - Regular Auto Fish")
@@ -186,7 +186,7 @@ end
 
 local function validateCompleteConfig()
     -- Cek apakah URL sudah diganti
-    if GITHUB_CONFIG.USERNAME == "yourusername" or GITHUB_CONFIG.REPO_NAME == "yourrepo" then
+    if GITHUB_CONFIG.USERNAME == "XSan" or GITHUB_CONFIG.REPO_NAME == "SpinnerFISHIT" then
         warn("❌ Please edit the GitHub URLs in this config file!")
         warn("📝 Change 'yourusername' and 'yourrepo' to your actual GitHub info")
         warn("📝 Also update 'fish-script' to your actual repository name")

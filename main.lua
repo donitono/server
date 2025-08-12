@@ -29,7 +29,7 @@ local CONFIG = {
 }
 
 -- GitHub Raw URL for UI Module (GANTI DENGAN URL GITHUB RAW ANDA)
-local UI_MODULE_URL = _G.ZayrosFishConfig and _G.ZayrosFishConfig.GitHub.UI_MODULE or "https://raw.githubusercontent.com/yourusername/yourrepo/main/ui_module_complete.lua"
+local UI_MODULE_URL = _G.ZayrosFishConfig and _G.ZayrosFishConfig.GitHub.UI_MODULE or "https://raw.githubusercontent.com/donitono/server/refs/heads/main/ui.lua"
 
 -- Main execution wrapper
 local success, error = pcall(function()

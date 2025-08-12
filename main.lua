@@ -10,8 +10,8 @@
 --                          CONFIGURATION
 -- ===================================================================
 local CONFIG = {
-    GUI_NAME = "ZayrosFISHIT", -- Ganti nama GUI disini
-    GUI_TITLE = "ZAYROS FISH SCRIPT", -- Ganti judul yang ditampilkan
+    GUI_NAME = "SpinnerFISHIT", -- Ganti nama GUI disini
+    GUI_TITLE = "FISH SCRIPT", -- Ganti judul yang ditampilkan
     LOGO_IMAGE = "rbxassetid://10776847027", -- Ganti dengan ID gambar kamu
     HOTKEY = Enum.KeyCode.F9, -- Hide/Show GUI
     AUTO_SAVE_SETTINGS = true,

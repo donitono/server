@@ -28,14 +28,14 @@
 -- GANTI URL INI DENGAN GITHUB RAW URL ANDA
 local GITHUB_CONFIG = {
     -- URL untuk UI Module Complete (WAJIB GANTI)
-    UI_MODULE = "https://raw.githubusercontent.com/donitono/server/refs/heads/main/ui.lua",
+    UI_MODULE = "https://raw.githubusercontent.com/donitono/server/refs/heads/main/ui_module_complete.lua",
     
     -- URL untuk Main Script Complete (WAJIB GANTI)
-    MAIN_SCRIPT = "https://raw.githubusercontent.com/donitono/server/refs/heads/main/main.lua",
+    MAIN_SCRIPT = "https://raw.githubusercontent.com/donitono/server/refs/heads/main/main_script_complete.lua",
     
     -- Informasi Repository
-    REPO_NAME = "SpinnerFISHIT",
-    USERNAME = "XSan",
+    REPO_NAME = "server",
+    USERNAME = "donitono",
     BRANCH = "main"
 }
 
@@ -139,7 +139,7 @@ local function loadCompleteScript()
     end
     
     -- Load main script yang akan load UI module
-    local success, error = pcall(function()
+    local success, error_msg = pcall(function()
         -- Inject configuration ke main script
         _G.ZayrosFishConfig = {
             GitHub = GITHUB_CONFIG,
@@ -148,8 +148,22 @@ local function loadCompleteScript()
         }
         
         print("🔄 Loading main script...")
+        
+        -- Test URL terlebih dahulu
+        local testSuccess, testResult = pcall(function()
+            return game:HttpGet(GITHUB_CONFIG.MAIN_SCRIPT)
+        end)
+        
+        if not testSuccess then
+            error("Failed to fetch main script: " .. tostring(testResult))
+        end
+        
+        if #testResult < 100 then
+            error("Main script file is too small or empty")
+        end
+        
         -- Load main script complete
-        loadstring(game:HttpGet(GITHUB_CONFIG.MAIN_SCRIPT))()
+        loadstring(testResult)()
     end)
     
     if success then
@@ -175,8 +189,17 @@ local function loadCompleteScript()
         print("📊 Statistics & Analytics")
         print("📦 Enhanced GUI with floating button")
     else
-        warn("❌ Failed to load script: " .. tostring(error))
-        warn("💡 Check your GitHub URLs and internet connection")
+        warn("❌ Failed to load script: " .. tostring(error_msg))
+        warn("💡 Possible solutions:")
+        warn("   1. Check your GitHub URLs")
+        warn("   2. Make sure files exist on GitHub")
+        warn("   3. Check internet connection")
+        warn("   4. Verify file names are correct:")
+        warn("      - ui_module_complete.lua")
+        warn("      - main_script_complete.lua")
+        warn("🔗 Current URLs:")
+        warn("   UI: " .. GITHUB_CONFIG.UI_MODULE)
+        warn("   Main: " .. GITHUB_CONFIG.MAIN_SCRIPT)
     end
 end
 
@@ -185,7 +208,7 @@ end
 -- ===================================================================
 
 local function validateCompleteConfig()
-    -- Cek apakah URL sudah diganti
+    -- Cek apakah URL sudah diganti (sekarang menggunakan donitono/server yang valid)
     if GITHUB_CONFIG.USERNAME == "XSan" or GITHUB_CONFIG.REPO_NAME == "SpinnerFISHIT" then
         warn("❌ Please edit the GitHub URLs in this config file!")
         warn("📝 Change 'yourusername' and 'yourrepo' to your actual GitHub info")
